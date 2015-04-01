@@ -3,11 +3,15 @@
 void setup() {
   // put your setup code here, to run once:
   pinMode(LedBlink::pin, OUTPUT);
+  
+  
+  Serial.begin(9600);
+  irrecv.enableIRIn();
 }
 
 void loop() {
   
-    int8_t action = processRemote();
+    byte action = processRemote();
     
     switch(action){
       
